@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        p{
+          
+          color:rgb(29, 29, 114);
+          font-weight: bolder;
+          font-size: larger;
+          }
+          body{
+            background-color: lightblue;
+          }
+          button{
+            padding: 20px 20px;
+            border-radius: 50%;
+          }
+      </style>
+        <title>Error Handling</title>
+    </head>
+<body><center>
+
+<h2><u>Enter a number between 50 and 100:</u></h2>
+
+<input id="demo" type="text" style="height: 40px;">
+<button type="button" onclick="myFunction()">Enter</button>
+
+<p id="p"></p>
+<h3>Built in Error</h3>
+<input type="button" value="Click" onclick="myFunc();" /></center>
+<script>
+function myFunction() {
+  var message, x;
+  message = document.getElementById("p");
+  message.innerHTML = "";
+  x = document.getElementById("demo").value;
+  try { 
+    if(x == "")  throw "Empty";
+    if(isNaN(x)) throw "Not a Number";
+    x = Number(x);
+    if(x > 100)   throw "greater than 100";
+    if(x < 50)  throw "less than 50";
+  }
+  catch(err) {
+    message.innerHTML = "Entered value is " + err;
+  }
+  finally {
+    document.getElementById("demo").value = "";
+  }
+}
+
+function myFunc() {
+            let a = 100;
+            let b = 0;
+
+            try {
+                if (b == 0) {
+                    throw ("Divide by zero error.");
+                } else {
+                    let c = a / b;
+                }
+            } catch (e) {
+                alert("Error: " + e);
+            }
+        }
+
+</script>
+
+</body>
+</html>
+
+
+
